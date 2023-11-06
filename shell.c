@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * main - Entry point of the shell.
+ * @ac: The argument count.
+ * @av: The argument vector.
+ *
+ * Return: 0 on success, or an error code on failure.
+ */
+
 int main(int ac, char **av)
 {
 	char *line = NULL, **cmd = NULL;
