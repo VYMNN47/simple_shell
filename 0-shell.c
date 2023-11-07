@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		{
 			exec_builtin(cmd, av, status, counter);
 		}
-
-		status = _exec(cmd, av, counter); /*executes the give command*/
+		else
+			status = _exec(cmd, av, counter); /*executes the give command*/
 	}
 }
