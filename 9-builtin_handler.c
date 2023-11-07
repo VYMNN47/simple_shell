@@ -24,12 +24,12 @@ void exec_builtin(char **cmd, char **av, int status, int counter)
 	{
 		exec_exit(cmd, status);
 	}
-/*
-	else if (_strcmp(cmd, "env") == 0)
-	{
-		exec_env();
-	}
 
+	else if (_strcmp(cmd[0], "env") == 0)
+	{
+		exec_env(cmd, status);
+	}
+/*
 	else if (_strcmp(cmd, "setenv") == 0)
 	{
 		exec_setenv();
