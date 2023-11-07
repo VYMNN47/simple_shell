@@ -19,9 +19,10 @@ extern char **environ;
 char *get_input(void);
 char **tokenizer(char *line);
 void free2d(char **str);
-int _exec(char **cmd, char **av);
+int _exec(char **cmd, char **av, int counter);
 char *get_env(char *variable);
 char *get_path(char *cmd);
+void printerr(char *name, int counter, char *cmd);
 
 /*String functions*/
 char *_strdup(const char *str);
@@ -29,5 +30,9 @@ int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
+char *_itoa(int n);
+void string_rev(char *string, int length);
+char *_strtok(char *str, char *delim);
+char *_strchr(char *s, char c);
 
 #endif
