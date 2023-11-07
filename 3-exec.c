@@ -24,8 +24,8 @@ int _exec(char **cmd, char **av, int counter)
 		{
 			if (execve(full_cmd, cmd, environ) == -1)
 			{
+				free2d(cmd);
 				free(full_cmd), full_cmd = NULL;
-				exit(127);
 			}
 		}
 		else
