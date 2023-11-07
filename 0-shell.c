@@ -25,6 +25,11 @@ int main(int ac, char **av)
 		if (cmd == NULL)
 			continue;
 
+		if (is_builtin_cmd(cmd[0]))
+		{
+			exec_builtin(cmd, av, status, counter);
+		}
+
 		status = _exec(cmd, av, counter); /*executes the give command*/
 	}
 }
