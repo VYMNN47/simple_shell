@@ -24,6 +24,11 @@ char *get_env(char *variable);
 char *get_path(char *cmd);
 void printerr(char *name, int counter, char *cmd);
 
+/*Handle builtin functions*/
+int is_builtin_cmd(char *cmd);
+void exec_builtin(char **cmd, char **av, int staus, int counter);
+void exec_exit(char **cmd, int status);
+
 /*String functions*/
 char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
