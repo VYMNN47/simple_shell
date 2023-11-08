@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * main - Entry point of the shell program
+ * @ac: The number of command-line arguments (unused)
+ * @av: An array of command-line arguments
+ *
+ * Return: The exit status of the shell program
+ */
+
 int main(int ac, char **av)
 {
 	char *line = NULL, **cmd = NULL;
