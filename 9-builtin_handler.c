@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * is_builtin_cmd - Check if a command is a built-in shell command
+ *
+ * @cmd: The command to check
+ *
+ * Return: 1 if the command is a built-in, 0 otherwise
+ */
+
 int is_builtin_cmd(char *cmd)
 {
 	char *builtin_cmds[] = {"exit", "env", "setenv", "cd", "history", NULL};
@@ -15,6 +23,15 @@ int is_builtin_cmd(char *cmd)
 
 	return (0);
 }
+
+/**
+ * exec_builtin - Execute a built-in shell command
+ *
+ * @cmd: Array of strings representing the command and its arguments
+ * @av: Array of strings representing command-line arguments (unused)
+ * @status: The exit status of the shell program
+ * @counter: Counter to keep track of the number of commands executed (unused)
+ */
 
 void exec_builtin(char **cmd, char **av, int status, int counter)
 {
