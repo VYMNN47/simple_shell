@@ -7,7 +7,8 @@
  * @count: A count or identifier (e.g., command execution number)
  * @cmd: The command that resulted in an error
  *
- * This function prints an error message in the format: "name: count: cmd: not found\n"
+ * This function prints an error message in the format:
+ * "name: count: cmd: not found\n"
  * to the standard error (STDERR_FILENO).
  */
 
