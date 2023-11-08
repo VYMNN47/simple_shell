@@ -5,6 +5,7 @@
  *
  * @cmd: given command
  * @av: command with arguments
+ * @counter: Counter to keep track of the number of commands executed
  *
  * Return: returns the exist status of status
  */
@@ -12,7 +13,7 @@
 int _exec(char **cmd, char **av, int counter)
 {
 	pid_t childpid;
-	int status; 
+	int status;
 	char *full_cmd = NULL;
 
 	full_cmd = get_path(cmd[0]);
