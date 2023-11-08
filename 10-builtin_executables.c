@@ -30,8 +30,8 @@ void exec_env(char **cmd, int status)
 
 	for (index = 0; environ[index] != NULL; index++)
 	{
-		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));/* Write each environment variable to the standard output */
-		write(STDOUT_FILENO, "\n", 1);/* Write a newline character for separation */
+		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));
+		write(STDOUT_FILENO, "\n", 1);
 	}
 
 	free2d(cmd);
