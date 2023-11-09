@@ -27,7 +27,7 @@ void printerr(char *name, int counter, char *cmd);
 /*Handle builtin functions*/
 int is_builtin_cmd(char *cmd);
 void exec_builtin(char **cmd, char **av, int *staus, int counter);
-void exec_exit(char **cmd, int *status);
+void exec_exit(char **cmd, char **av, int *status, int counter);
 void exec_env(char **cmd, int *status);
 
 /*String functions*/
@@ -40,5 +40,7 @@ char *_itoa(int n);
 void string_rev(char *string, int length);
 char *_strtok(char *str, char *delim);
 char *_strchr(char *s, char c);
+int is_positive(char *str);
+int _atoi(char *s);
 
 #endif

@@ -24,9 +24,6 @@ int is_builtin_cmd(char *cmd)
 	return (0);
 }
 
-<<<<<<< HEAD
-void exec_builtin(char **cmd, char **av, int *status, int counter)
-=======
 /**
  * exec_builtin - Execute a built-in shell command
  *
@@ -35,34 +32,33 @@ void exec_builtin(char **cmd, char **av, int *status, int counter)
  * @status: The exit status of the shell program
  * @counter: Counter to keep track of the number of commands executed (unused)
  */
-
-void exec_builtin(char **cmd, char **av, int status, int counter)
->>>>>>> b34d1def2957df98cde9da3ed229feda0f35dee8
+void exec_builtin(char **cmd, char **av, int *status, int counter)
 {
 	(void)av, (void)counter;
 
 	if (_strcmp(cmd[0], "exit") == 0)
 	{
-		exec_exit(cmd, status);
+		exec_exit(cmd, av, status, counter);
 	}
 
 	else if (_strcmp(cmd[0], "env") == 0)
 	{
 		exec_env(cmd, status);
 	}
-/*
-	else if (_strcmp(cmd, "setenv") == 0)
-	{
-		exec_setenv();
-	}
-
-	else if (_strcmp(cmd, "cd") == 0)
-	{
-		exec_cd();
-	}
-
-	else if (_strcmp(cmd, "history") == 0)
-	{
-		exec_history();
-	}*/
+/**
+ *	else if (_strcmp(cmd, "setenv") == 0)
+ *	{
+ *		exec_setenv();
+ *	}
+ *
+ *	else if (_strcmp(cmd, "cd") == 0)
+ *	{
+ *		exec_cd();
+ *	}
+ *
+ *	else if (_strcmp(cmd, "history") == 0)
+ *	{
+ *		exec_history();
+ *	}
+ */
 }

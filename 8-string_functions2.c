@@ -1,6 +1,35 @@
 #include "shell.h"
 
 /**
+ * is_positive - checks if the given string number is positive
+ *
+ * @str: given string number
+ *
+ * Return: returns 1 if possible otherwise 0
+ */
+
+int is_positive(char *str)
+{
+	int i;
+
+	if (str == NULL)
+	{
+		return (0);
+	}
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			return (0);
+		}
+	}
+
+	return (1);
+
+}
+
+/**
  * _itoa - converts an integer into a string.
  *
  * @n: given string.
