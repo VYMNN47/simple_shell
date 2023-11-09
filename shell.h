@@ -26,9 +26,9 @@ void printerr(char *name, int counter, char *cmd);
 
 /*Handle builtin functions*/
 int is_builtin_cmd(char *cmd);
-void exec_builtin(char **cmd, char **av, int staus, int counter);
-void exec_exit(char **cmd, int status);
-void exec_env(char **cmd, int status);
+void exec_builtin(char **cmd, char **av, int *staus, int counter);
+void exec_exit(char **cmd, int *status);
+void exec_env(char **cmd, int *status);
 
 /*String functions*/
 char *_strdup(const char *str);

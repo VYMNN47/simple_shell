@@ -16,7 +16,7 @@ int is_builtin_cmd(char *cmd)
 	return (0);
 }
 
-void exec_builtin(char **cmd, char **av, int status, int counter)
+void exec_builtin(char **cmd, char **av, int *status, int counter)
 {
 	(void)av, (void)counter;
 

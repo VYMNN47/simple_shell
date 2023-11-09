@@ -1,12 +1,12 @@
 #include "shell.h"
 
-void exec_exit(char **cmd, int status)
+void exec_exit(char **cmd, int *status)
 {
 	free2d(cmd);
-	exit(status);
+	exit(*status);
 }
 
-void exec_env(char **cmd, int status)
+void exec_env(char **cmd, int *status)
 {
 	int index;
 	(void)status;
@@ -18,4 +18,5 @@ void exec_env(char **cmd, int status)
 	}
 
 	free2d(cmd);
+	(*status) = 0;
 }
