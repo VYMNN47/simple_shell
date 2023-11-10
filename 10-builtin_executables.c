@@ -63,3 +63,101 @@ void exec_env(char **cmd, int *status)
 	free2d(cmd);
 	(*status) = 0;
 }
+
+void exec_setenv(char **cmd, int *status)
+{
+	char error_usage[] = "Usage: setenv name value\n";
+	char error_prohib[] = "Prohibited usage of (=) in enviroment name\n";
+	char error_fail[] = "Setenv failed\n";
+
+	if (cmd[1] == NULL || cmd[2] == NULL)
+	{
+		write(STDERR_FILENO, error_usage, _strlen(error_usage));
+		free2d(cmd);
+		return;
+	}
+
+
+	if (_strchr(cmd[1], '=') != NULL)
+	{
+		write(STDERR_FILENO, error_prohib, _strlen(error_prohib));
+		free2d(cmd);
+		return;
+	}
+
+	if (setenv(cmd[1], cmd[2], 1) != 0)
+	{
+		write(STDOUT_FILENO, error_fail, _strlen(error_fail));
+		free2d(cmd);
+		return;
+	}
+
+	free2d(cmd);
+	(*status) = 0;
+}
+
+void exec_unsetenv(char **cmd, int *status)
+{
+	char error_usage[] = "Usage: setenv name\n";
+	char error_fail[] = "Unsetenv failed\n";
+
+	if (cmd[1] == NULL)
+	{
+		write(STDERR_FILENO, error_usage, _strlen(error_usage));
+		free2d(cmd);
+		return;
+	}
+
+	if (unsetenv(cmd[1]) != 0)
+	{
+		write(STDOUT_FILENO, error_fail, _strlen(error_fail));
+		free2d(cmd);
+		return;
+	}
+	free2d(cmd);
+	(*status) = 0;
+}
+
+void exec_cd(char **cmd, char **av, int *status, int counter)
+{
+	char cdir[PATH_MAX], olddir[PATH_MAX], *home = get_env("HOME");
+	char *temp;
+
+	getcwd(olddir, PATH_MAX);
+	if (cmd[1] == NULL)
+	{
+		if (home != NULL)
+		{
+			chdir(home), setenv("PWD", home, 1);
+			setenv("OLDPWD", olddir, 1), free(home), home = NULL;
+		}
+		free2d(cmd);
+		return;
+	}
+	if (_strcmp(cmd[1], "-") == 0)
+	{
+		temp = get_env("OLDPWD");
+		if (temp == NULL)
+		{
+			getcwd(cdir, PATH_MAX);
+			write(STDOUT_FILENO, cdir, _strlen(cdir));
+			write(STDOUT_FILENO, "\n", 1);
+		}
+		else
+		{
+			chdir(temp), getcwd(cdir, PATH_MAX);
+			setenv("OLDPWD", olddir, 1), setenv("PWD", cdir, 1);
+			write(STDOUT_FILENO, cdir, _strlen(cdir));
+			write(STDOUT_FILENO, "\n", 1);
+		}
+		free(temp), free(home), free2d(cmd);
+		return;
+	}
+	if (chdir(cmd[1]) != 0)
+	{
+		printerr(av[0], counter, cmd), free(home), free2d(cmd);
+		return;
+	}
+	getcwd(cdir, PATH_MAX), setenv("OLDPWD", olddir, 1);
+	setenv("PWD", cdir, 1), free(home), free2d(cmd), (*status) = 0;
+}

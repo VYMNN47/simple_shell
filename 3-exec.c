@@ -39,7 +39,7 @@ int _exec(char **cmd, char **av, int counter)
 	}
 	else
 	{
-		printerr(av[0], counter, cmd[0]);
+		printerr(av[0], counter, cmd);
 		free2d(cmd);
 		return (127);
 	}
