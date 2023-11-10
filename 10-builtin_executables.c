@@ -4,6 +4,8 @@
  * exec_exit - Execute the built-in "exit" command
  * @cmd: An array of command arguments (unused)
  * @status: The exit status of the shell program
+ * @counter: The command counter
+ * @av: The program name and its arguments
  *
  * This function frees allocated memory and exits the shell program with the
  * specified status code.
@@ -64,6 +66,15 @@ void exec_env(char **cmd, int *status)
 	(*status) = 0;
 }
 
+/**
+ * exec_setenv - Execute the built-in "setenv" command
+ * @cmd: An array of command arguments
+ * @status: The exit status of the shell program
+ *
+ * Sets or updates an environment variable with the specified name and value.
+ * Prints error messages for invalid usage or failure.
+ */
+
 void exec_setenv(char **cmd, int *status)
 {
 	char error_usage[] = "Usage: setenv name value\n";
@@ -96,6 +107,14 @@ void exec_setenv(char **cmd, int *status)
 	(*status) = 0;
 }
 
+/**
+ * exec_unsetenv - Unset an environment variable.
+ * @cmd: An array of strings containing the command and its arguments.
+ * @status: A pointer to the status variable.
+ *
+ * Return: void
+ */
+
 void exec_unsetenv(char **cmd, int *status)
 {
 	char error_usage[] = "Usage: setenv name\n";
@@ -117,6 +136,17 @@ void exec_unsetenv(char **cmd, int *status)
 	free2d(cmd);
 	(*status) = 0;
 }
+
+/**
+ * exec_cd - Execute the built-in "cd" command
+ * @cmd: An array of command arguments
+ * @av: The program name and its arguments
+ * @status: The exit status of the shell program
+ * @counter: The command counter
+ *
+ * Changes the current working directory as per the provided command arguments.
+ * Prints the new current directory or error messages accordingly.
+ */
 
 void exec_cd(char **cmd, char **av, int *status, int counter)
 {
