@@ -32,6 +32,8 @@ int is_builtin_cmd(char *cmd)
  * @av: Array of strings representing command-line arguments (unused)
  * @status: The exit status of the shell program
  * @counter: Counter to keep track of the number of commands executed (unused)
+ *
+ * Description: Executes the appropriate built-in command based on cmd[0].
  */
 void exec_builtin(char **cmd, char **av, int *status, int counter)
 {
