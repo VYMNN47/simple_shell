@@ -16,7 +16,14 @@ int main(int ac, char **av)
 
 	while (1) /*Shell is running until EOF is reached or exit*/
 	{
-		line = get_input();
+		if (ac == 2)
+		{
+			line = read_textfile(av, counter);
+		}
+		else
+		{
+			line = get_input();
+		}
 
 		if (line == NULL) /*if EOF is reached or ctrl + D*/
 		{
@@ -39,5 +46,7 @@ int main(int ac, char **av)
 		}
 		else
 			status = _exec(cmd, av, counter); /*executes the give command*/
+		if (ac == 2)
+			exit(EXIT_SUCCESS);
 	}
 }

@@ -60,10 +60,4 @@ void exec_builtin(char **cmd, char **av, int *status, int counter)
 	{
 		exec_cd(cmd, av, status, counter);
 	}
-/**
- *	else if (_strcmp(cmd, "history") == 0)
- *	{
- *		exec_history();
- *	}
- */
 }

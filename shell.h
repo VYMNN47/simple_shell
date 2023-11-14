@@ -24,6 +24,7 @@ int _exec(char **cmd, char **av, int counter);
 char *get_env(char *variable);
 char *get_path(char *cmd);
 void printerr(char *name, int counter, char **cmd);
+char *read_textfile(char **av, int counter);
 
 /*Handle builtin functions*/
 int is_builtin_cmd(char *cmd);

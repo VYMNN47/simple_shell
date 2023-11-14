@@ -4,7 +4,8 @@
  * exec_exit - Execute the built-in "exit" command
  * @cmd: An array of command arguments (unused)
  * @status: The exit status of the shell program
- *
+ * @av: argument vector
+ * @counter: command counmter
  * This function frees allocated memory and exits the shell program with the
  * specified status code.
  */
@@ -64,6 +65,12 @@ void exec_env(char **cmd, int *status)
 	(*status) = 0;
 }
 
+/**
+ * exec_setenv - executes the builtin command setenv
+ * @cmd: given command
+ * @status: exit status
+ */
+
 void exec_setenv(char **cmd, int *status)
 {
 	char error_usage[] = "Usage: setenv name value\n";
@@ -96,6 +103,13 @@ void exec_setenv(char **cmd, int *status)
 	(*status) = 0;
 }
 
+/**
+ * exec_unsetenv - executes the builtin command unsetenv
+ * @cmd: given command
+ * @status: exit status
+ */
+
+
 void exec_unsetenv(char **cmd, int *status)
 {
 	char error_usage[] = "Usage: setenv name\n";
@@ -117,6 +131,14 @@ void exec_unsetenv(char **cmd, int *status)
 	free2d(cmd);
 	(*status) = 0;
 }
+
+/**
+ * exec_cd - executes the builtin command cd
+ * @cmd: given command
+ * @av: argument vector
+ * @status: exit status
+ * @counter: command counter
+ */
 
 void exec_cd(char **cmd, char **av, int *status, int counter)
 {
