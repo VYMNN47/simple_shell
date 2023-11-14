@@ -1,6 +1,7 @@
 # 0x16. C - Simple Shell
 
-ALX Simple Shell team project done by **Ahmed Mahmoud and Ayman Belahsen**
+ALX Simple Shell team project done by **[Ahmed Mahmoud](https://github.com/Ahmed-l2) and Ayman [Belahsen](https://github.com/VYMNN47)**
+
 This is the last project of sprint 1 of the ALX SE PROGRAM.
 
 
