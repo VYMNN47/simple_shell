@@ -3,7 +3,7 @@
 /**
  * is_positive - Check if a string represents a positive integer.
  *
- * @str: given string number
+ * @str: The string to check.
  *
  * Return: returns 1 if possible otherwise 0
  */
@@ -32,7 +32,7 @@ int is_positive(char *str)
 /**
  * _itoa - converts an integer into a string.
  *
- * @n: given string.
+ * @n: The integer to convert.
  *
  * Return: returns string.
  */
