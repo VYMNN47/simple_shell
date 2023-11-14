@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * is_positive - checks if the given string number is positive
+ * is_positive - Check if a string represents a positive integer.
  *
  * @str: given string number
  *
