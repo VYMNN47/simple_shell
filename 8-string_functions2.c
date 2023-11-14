@@ -66,7 +66,7 @@ char *_itoa(int n)
 /**
 * string_rev - reverses the given string.
 *
-* @string: given string.
+* @string: The string to be reversed.
 * @length: length of string.
 */
 
@@ -139,8 +139,8 @@ char *_strtok(char *str, char *delim)
 
 /**
 * _strchr - function that locates a character in a string
-* @s: given string
-* @c: search character
+* @s: The string to search.
+* @c: The character to locate.
 * Return: returns pointer to character if found, otherwise returns NULL
 */
 
