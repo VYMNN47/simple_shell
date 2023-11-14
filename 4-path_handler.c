@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * get_env - gets the enviroment variable
+ * get_env - Get the value of an environment variable.
  *
- * @variable: given enviroment variable to get
+ * @variable: The name of the environment variable to retrieve.
  *
  * Return: returns enviroment variable or NULL if not found
  */
