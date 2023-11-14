@@ -4,9 +4,11 @@
 
 /**
  * read_textfile - Read the contents of a file and return them as a string.
+ *
  * @av: The array of command-line arguments
  * @counter: counter for commands excuted in the shell
- * Return: returns the read command from file
+ *
+ * Return: A pointer to the string containing the file contents.
  */
 
 char *read_textfile(char **av, int counter)
