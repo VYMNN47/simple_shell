@@ -3,8 +3,8 @@
 #define BUF_SIZE 1024
 
 /**
- * read_textfile - reads content from text file and returns it to the shell
- * @av: argument vector
+ * read_textfile - Read the contents of a file and return them as a string.
+ * @av: The array of command-line arguments
  * @counter: counter for commands excuted in the shell
  * Return: returns the read command from file
  */
