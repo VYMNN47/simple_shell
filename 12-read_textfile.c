@@ -37,6 +37,7 @@ char *read_textfile(char **av, int counter)
 			write(STDERR_FILENO, count, _strlen(count));
 			write(STDERR_FILENO, err, _strlen(err));
 			write(STDERR_FILENO, av[1], _strlen(av[1]));
+			write(STDERR_FILENO, "\n", 1);
 			free(count), count = NULL;
 			exit(2);
 		}
