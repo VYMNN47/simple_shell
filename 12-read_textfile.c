@@ -17,7 +17,7 @@ char *read_textfile(char **av, int counter)
 	char line[BUF_SIZE];
 	ssize_t bytesRead;
 	char *count = NULL;
-	char err[] = ": cannot open ";
+	char err[] = ": Can't open ";
 
 	if (!av[1])
 	{
