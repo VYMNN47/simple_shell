@@ -39,7 +39,7 @@ char *read_textfile(char **av, int counter)
 			write(STDERR_FILENO, av[1], _strlen(av[1]));
 			write(STDERR_FILENO, "\n", 1);
 			free(count), count = NULL;
-			exit(2);
+			exit(127);
 		}
 		exit(0);
 	}
