@@ -18,7 +18,6 @@ char *read_textfile(char **av, int counter)
 	ssize_t bytesRead;
 	char *count = NULL;
 	char err[] = ": cannot open ";
-	char err2[] = ": No such file\n";
 
 	if (!av[1])
 	{
@@ -38,7 +37,6 @@ char *read_textfile(char **av, int counter)
 			write(STDERR_FILENO, count, _strlen(count));
 			write(STDERR_FILENO, err, _strlen(err));
 			write(STDERR_FILENO, av[1], _strlen(av[1]));
-			write(STDERR_FILENO, err2, _strlen(err2));
 			free(count), count = NULL;
 			exit(2);
 		}
